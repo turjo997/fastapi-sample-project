@@ -63,7 +63,7 @@ jobs:
             fi
 
             cd $APP_DIR
-            export $IMAGE_TAG=${IMAGE_TAG}
+            export IMAGE_TAG=${IMAGE_TAG}
             docker compose pull
             docker compose down
             docker compose up -d --remove-orphans
