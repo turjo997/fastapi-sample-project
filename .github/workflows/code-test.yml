@@ -1,9 +1,10 @@
 name: Python Code Tests
 
 on:
+  workflow_dispatch: 
   push:
     branches:
-#      - development
+      - main
       - feature/python-code
 #  pull_request:
 #    branches:
