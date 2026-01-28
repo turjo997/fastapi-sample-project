@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   docker-build-and-push:
@@ -17,12 +17,12 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_USERNAME }}
 
       - name: Build Docker Image
         run: |
-          docker build -t nahiyanswe/fastapi-sample-project:base-image .
+          docker build -t ullash997/fastapi-sample-project:base-image .
 
       - name: Push Docker Image to Docker Hub
         run: |
-          docker push nahiyanswe/fastapi-sample-project:base-image
+          docker push ullash997/fastapi-sample-project:base-image
